@@ -1,0 +1,36 @@
+Tim Leikam
+HW 1
+REST writeup
+
+REQUEST RAW:
+GET - using HTTP version 1.1
+    - using the link specified in the assignment
+Accept - encoded gzip (type of data?)
+       - deflate (take out whitespace?)
+Host - the server being contacted (www.googleapis.com)
+Connection - keep-alive (stay connected?)
+User-Agent - Apache-HttpClient/4.1.1 (java 1.5)
+    -The server is using Apache and http, I'm using...something and java
+
+RESPONSE RAW:
+HTTP/1.1 200 OK - Connected fine using http version 1.1
+Expires (date/time) - my connection timeout
+Date - when the response came in
+Cache-Control: private, max-age = 0, must-revalidate, no transform
+     -Private line, one time connection, must send credentials on each connection, no idea what transform would be
+ETag - id of the session?
+Vary:Origin - no idea
+Vary:X-Origin - no idea
+Content-Type - it will return json data using the character set utf-8
+x-Content-Type-Options: nosniff - no idea
+X-Frame-Options:SAMEORIGIN - no idea
+X-XSS-Protection: 1;mode=block - secure connection?
+Content-Length: 26982 - I'm guessing it's the total characters returned because there's not 27,000 lines of json data that I get
+Server - which server sent the response?
+Alternate-Protocol:443:quic, p=0.02 - which protocols were used by my machine and the server to communicate
+
+NOTES
+I couldn't get it to test the existence of a title in volumeInfo in the item list.
+I tried a plethora of different things and couldn't get it to be valid in the
+assertion.  I even tried adding it to the outline of the response object but
+the added assertion just wouldn't save.

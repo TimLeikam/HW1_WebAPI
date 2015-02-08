@@ -1,0 +1,30 @@
+Tim Leikam
+HW1
+SOAP WDSL Writeup
+
+REQUEST RAW:
+POST - Using http version 1.1
+     - website same as in assignment
+Accept-Encoding: gzip and deflate (type of encoding algorithm?)
+Content-Type - xml text and character set utf-8
+SOAPAction - what site to use? (in my case, http://www.webservicex.net/GetGeoIP)
+Content-Length - 317, total characters?
+Host - server address
+Connection - always on
+User-Agent - Host is an Appache-Http
+           - Client is...4.1.1 (no idea) and java 1.5
+
+RESPONSE RAW
+HTTP - version 1.1 received 200 OK
+Cache-Control - private connection and max age of 0 (get results once and stop getting them?)
+Content-Type - xml text and character set utf-8
+Content-Encoding - gzip encoded data
+Vary - accept-encoding (it's ok to accept encoded data?)
+Server - what server is being used
+X-AspNet-Version - version of the aspnet being used
+X-Powered-By - what the server is using?
+Date - date of the response
+Content-Length - amount of characters received back?
+
+NOTES
+My assertion is tied to my GetGeoIP in my test case, not in the assertions (it valids that the ip is from the United Kingdom)
